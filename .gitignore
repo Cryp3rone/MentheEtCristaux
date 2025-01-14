@@ -1,11 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
 
 # Godot-specific ignores
 .import/
 export.cfg
 export_presets.cfg
+# Godot Safe save option can produce tmp files
+*.tmp
 
 # Imported translations (automatically generated from CSV files)
 *.translation
