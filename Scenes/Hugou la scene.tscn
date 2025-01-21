@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj5se8cy8dqg4"]
+
+[ext_resource type="Texture2D" uid="uid://bn675jqgjgy3d" path="res://Sprites/SpriteSheet/character_idle.png" id="1_14vog"]
+[ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="2_71pbt"]
+
+[node name="HugouLaScene" type="Node2D"]
+texture_filter = 1
+
+[node name="CharacterIdle" type="Sprite2D" parent="."]
+position = Vector2(547, -77)
+texture = ExtResource("1_14vog")
+
+[node name="Player" parent="." instance=ExtResource("2_71pbt")]
+position = Vector2(403, -48)
