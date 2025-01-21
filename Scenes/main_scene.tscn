@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://db5cfan2a3vjb"]
 
-[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/Chambre_Froide.tscn" id="1_fekva"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="1_qspk8"]
 [ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="2_liovv"]
 [ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="4_m4k51"]
+[ext_resource type="PackedScene" uid="uid://c5rbiv8ebeuov" path="res://Scenes/Rooms/Chambre_Froide.tscn" id="4_xi3cf"]
 [ext_resource type="PackedScene" uid="uid://s6ah3dc0wqxd" path="res://Scenes/Rooms/room_3.tscn" id="5_8ykb7"]
 [ext_resource type="PackedScene" uid="uid://d2bd4nrdruls4" path="res://Scenes/Rooms/room_4.tscn" id="6_jg4hf"]
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://Scenes/hud.tscn" id="7_i43eg"]
@@ -12,8 +12,18 @@
 
 [node name="Dungeon" type="Node2D" parent="."]
 
-[node name="Room1" parent="Dungeon" instance=ExtResource("1_fekva")]
+[node name="Room1" parent="Dungeon"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 is_start_room = true
+script = null
 
 [node name="Room2" parent="Dungeon" instance=ExtResource("4_m4k51")]
 position = Vector2(0, -288)
@@ -35,6 +45,9 @@ room_pos = Vector2i(2, 1)
 [node name="Room6" parent="Dungeon" instance=ExtResource("6_jg4hf")]
 position = Vector2(704, 0)
 room_pos = Vector2i(2, 0)
+
+[node name="Room7" parent="Dungeon" instance=ExtResource("4_xi3cf")]
+position = Vector2(-4, 13)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(175, -145)

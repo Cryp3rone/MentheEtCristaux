@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=4 uid="uid://wx1d3cdd6ci2"]
+[gd_scene load_steps=6 format=4 uid="uid://c5rbiv8ebeuov"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_cips2"]
 [ext_resource type="TileSet" uid="uid://boei5dbdfnuex" path="res://Resources/TileSets/placeholder_tileset.tres" id="1_mlda8"]
+[ext_resource type="Shader" path="res://Shaders/color_dither_post_2d.gdshader" id="3_xo38u"]
+[ext_resource type="Texture2D" uid="uid://7jr0r7uygdac" path="res://Shaders/gameboyPalette.png" id="4_rdih6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf1aq"]
+shader = ExtResource("3_xo38u")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/dither_palette = ExtResource("4_rdih6")
 
 [node name="Room1" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
 script = ExtResource("1_cips2")
@@ -19,11 +29,18 @@ tile_set = ExtResource("1_mlda8")
 tile_map_data = PackedByteArray("AAAHAPn/BgAMACQAAAADAPv/BgAMACQAAAAHAPv/BgAMACMAAAAHAPr/BgAMACMAAAADAP3/BgAKACMAAAADAPz/BgAKACMAAAA=")
 tile_set = ExtResource("1_mlda8")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_yf1aq")
+offset_left = 318.0
+offset_top = -33.0
+offset_right = 334.0
+offset_bottom = -19.0
+
 [connection signal="body_entered" from="Props/HeartCollectible" to="Props/HeartCollectible" method="_on_body_entered"]
 [connection signal="body_entered" from="Props/KeyCollectible" to="Props/KeyCollectible" method="_on_body_entered"]
 [connection signal="body_entered" from="Props/Spikes" to="Props/Spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@54019" to="Props/@Area2D@54019" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@54021" to="Props/@Area2D@54021" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@54024" to="Props/@Area2D@54024" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@54025" to="Props/@Area2D@54025" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@54026" to="Props/@Area2D@54026" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@38449" to="Props/@Area2D@38449" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@38450" to="Props/@Area2D@38450" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@38451" to="Props/@Area2D@38451" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@38452" to="Props/@Area2D@38452" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@38453" to="Props/@Area2D@38453" method="_on_body_entered"]
