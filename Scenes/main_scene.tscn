@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://db5cfan2a3vjb"]
 
-[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/room_1.tscn" id="1_fekva"]
+[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/Chambre_Froide.tscn" id="1_fekva"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="1_qspk8"]
 [ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="2_liovv"]
 [ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="4_m4k51"]
@@ -42,6 +42,6 @@ zoom = Vector2(2.25, 2.25)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]
-position = Vector2(47, -63)
+position = Vector2(77, -50)
 
 [node name="hud" parent="." instance=ExtResource("7_i43eg")]
