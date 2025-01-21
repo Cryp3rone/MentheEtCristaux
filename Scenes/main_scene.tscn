@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://Scenes/hud.tscn" id="7_i43eg"]
 
 [node name="MainScene" type="Node2D"]
+texture_filter = 1
 
 [node name="Dungeon" type="Node2D" parent="."]
 
