@@ -3,7 +3,7 @@ class_name CharacterBase extends RigidBody2D
 signal life_changed(current_life : int)
 
 enum ORIENTATION {FREE, DPAD_8, DPAD_4}
-enum STATE {IDLE, ATTACKING, STUNNED, DEAD}
+enum STATE {IDLE, ATTACKING, STUNNED, DEAD, RUN}
 
 @export_group("Life")
 @export var life : int = 3 :
@@ -49,6 +49,8 @@ var _room #: Room
 
 func _process(delta: float) -> void:
 	_update_state(delta)
+	
+	
 
 
 func apply_hit(attack : Attack) -> void:
@@ -82,6 +84,7 @@ func _set_state(state : STATE) -> void:
 	_state = state
 
 
+
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if _has_to_apply_knockback:
 		state.linear_velocity = _knockback_value
@@ -90,14 +93,17 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if _direction.length() > 0.000001:
 		state.linear_velocity += _direction * _current_movement.acceleration * get_physics_process_delta_time()
 		state.linear_velocity = state.linear_velocity.limit_length(_current_movement.speed_max)
-		main_sprite.rotation = _compute_orientation_angle(_direction)
+		##flip sprite
+		
 	else:
 		## If direction length == 0, Apply friction
 		var friction_length = _current_movement.friction * get_physics_process_delta_time()
 		if state.linear_velocity.length() > friction_length:
 			state.linear_velocity -= state.linear_velocity.normalized() * friction_length
+
 		else:
 			state.linear_velocity = Vector2.ZERO
+
 
 
 func blink() -> void:
@@ -147,6 +153,8 @@ func _attack() -> void:
 
 	_last_attack_time = Time.get_unix_time_from_system()
 	_set_state(STATE.ATTACKING)
+	await get_tree().create_timer(attack_cooldown).timeout
+	_set_state(STATE.IDLE)
 
 
 func _spawn_attack_scene() -> void:
