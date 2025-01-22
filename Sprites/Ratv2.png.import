@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqkglf238215"
-valid=false
+uid="uid://dx5alpa7pnmk6"
+path="res://.godot/imported/Ratv2.png-75440eb0b328b35e33338724112a0e61.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/Ratv2.png"
+dest_files=["res://.godot/imported/Ratv2.png-75440eb0b328b35e33338724112a0e61.ctex"]
 
 [params]
 
