@@ -16,10 +16,12 @@ tile_map_data = PackedByteArray("AAABAPb/DAANAEAAAAABAPf/DAANAEEAAAABAPj/DAANAEI
 tile_set = ExtResource("2_bu0h1")
 
 [node name="Props2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACAPr/DAANAGUAAAAGAP3/DAAOAGMAAAAGAP7/DAAOAGQAAAAIAPn/DAANAGMAAAAIAPr/DAANAGQAAAADAPn/DAAPAGMAAAAEAPb/DAACACUAAAAEAPf/DAACACYAAAAJAPv/DAAKAB4AAAAHAPj/AgAAAAAAAgAJAP3/AgAAAAAAAgAFAPf/AgAAAAAAAwADAPv/AgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAACAPr/DAANAGUAAAAGAP3/DAAOAGMAAAAGAP7/DAAOAGQAAAAIAPn/DAANAGMAAAAIAPr/DAANAGQAAAADAPn/DAAPAGMAAAAEAPb/DAACACUAAAAEAPf/DAACACYAAAAJAPv/DAAKAB4AAAAHAPj/AgAAAAAAAgAJAP3/AgAAAAAAAgAFAPf/AgAAAAAAAwADAPv/AgAAAAAAAgABAPn/AAAAAAAAAQAHAP7/AAAAAAAAAQA=")
 tile_set = ExtResource("2_bu0h1")
 
 [connection signal="body_entered" from="Floor/Spikes" to="Floor/Spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@34213" to="Props2/@Area2D@34213" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@34214" to="Props2/@Area2D@34214" method="_on_body_entered"]
 [connection signal="body_entered" from="Props2/Spikes" to="Props2/Spikes" method="_on_body_entered"]
+[connection signal="body_entered" from="Props2/@Area2D@24909" to="Props2/@Area2D@24909" method="_on_body_entered"]
+[connection signal="body_entered" from="Props2/@Area2D@24910" to="Props2/@Area2D@24910" method="_on_body_entered"]
+[connection signal="body_entered" from="Props2/KeyCollectible" to="Props2/KeyCollectible" method="_on_body_entered"]
+[connection signal="body_entered" from="Props2/@Area2D@26157" to="Props2/@Area2D@26157" method="_on_body_entered"]
