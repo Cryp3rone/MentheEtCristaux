@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://hud4gw4in4fe"]
+
+[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/room_1.tscn" id="1_h64id"]
+[ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="2_o3p3c"]
+[ext_resource type="PackedScene" uid="uid://d2bd4nrdruls4" path="res://Scenes/Rooms/room_4.tscn" id="4_qrckt"]
+[ext_resource type="Script" path="res://Scripts/room_generator.gd" id="5_8xsp0"]
+[ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="5_43onh"]
+[ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="6_2r37k"]
+[ext_resource type="PackedScene" uid="uid://b6yujohkmh1la" path="res://Scenes/Rooms/room_5.tscn" id="6_vcill"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemy.tscn" id="7_fl3o8"]
+[ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://Scenes/hud.tscn" id="8_ao0g3"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Dungeon" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(175, -145)
+script = ExtResource("5_43onh")
+
+[node name="RoomManager" type="Node2D" parent="." node_paths=PackedStringArray("room_node")]
+script = ExtResource("5_8xsp0")
+map_size = Vector2i(10, 10)
+rooms = Array[PackedScene]([ExtResource("1_h64id"), ExtResource("2_o3p3c"), ExtResource("6_vcill"), ExtResource("4_qrckt")])
+room_node = NodePath("../Dungeon")
+
+[node name="Player" parent="." instance=ExtResource("6_2r37k")]
+position = Vector2(47, -63)
+test_package = ExtResource("7_fl3o8")
+
+[node name="hud" parent="." instance=ExtResource("8_ao0g3")]

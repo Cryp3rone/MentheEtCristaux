@@ -26,7 +26,6 @@ func _ready() -> void:
 
 	_room = node
 	_room.doors.push_back(self)
-	_room.doors.push_back(self)
 
 	var room_bounds : Rect2 = _room.get_local_bounds()
 	var ratio : float = room_bounds.size.x / room_bounds.size.y
@@ -52,14 +51,15 @@ func _try_unlock() -> void:
 	if state != STATE.CLOSED || Player.Instance.key_count <= 0:
 		return
 
-	Player.Instance.key_count -= 1
-	set_state(STATE.OPEN)
-
 	var next_room = _room.get_adjacent_room(orientation, position)
 	if next_room:
 		var next_door = next_room.get_door(Utils.OppositeOrientation(orientation), position)
 		if next_door != null:
+			Player.Instance.key_count -= 1
+			set_state(STATE.OPEN)
 			next_door.set_state(STATE.OPEN)
+	else:
+		set_state(STATE.CLOSED)
 
 
 func set_state(new_state : STATE) -> void:
