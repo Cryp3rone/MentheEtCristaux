@@ -9,6 +9,7 @@ var _state_timer : float = 0.0
 
 
 func _ready() -> void:
+	$AnimationPlayer.play("Idle")
 	all_enemies.push_back(self)
 	for room in Room.all_rooms:
 		if room.contains(global_position):

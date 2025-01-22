@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://db5cfan2a3vjb"]
+[gd_scene load_steps=18 format=3 uid="uid://db5cfan2a3vjb"]
 
 [ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/Chambre_Froide.tscn" id="1_fekva"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="1_qspk8"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bu3mpyvc3fv1e" path="res://Scenes/Rooms/room_8.tscn" id="11_uaid2"]
 [ext_resource type="PackedScene" uid="uid://dbvu4ll33u4od" path="res://Scenes/Rooms/room_9.tscn" id="12_rfr1k"]
 [ext_resource type="PackedScene" uid="uid://sfme73xkhjhj" path="res://Scenes/Rooms/room_10.tscn" id="13_3k0i0"]
+[ext_resource type="PackedScene" uid="uid://duonf726lgihb" path="res://Scenes/enemyCarrot.tscn" id="14_2ttmu"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemyTomato.tscn" id="15_pmnry"]
+[ext_resource type="PackedScene" uid="uid://01yef0ya2jda" path="res://Scenes/enemyZucchini.tscn" id="16_n1n4a"]
+[ext_resource type="PackedScene" uid="uid://0i7hjdhspu52" path="res://Scenes/enemyBeet.tscn" id="17_wmuwe"]
 
 [node name="MainScene" type="Node2D"]
 texture_filter = 1
@@ -82,3 +86,15 @@ position = Vector2(2699, -1255)
 
 [node name="Room10" parent="." instance=ExtResource("13_3k0i0")]
 position = Vector2(3088, -1261)
+
+[node name="EnemyCarrot" parent="." instance=ExtResource("14_2ttmu")]
+position = Vector2(163, -186)
+
+[node name="EnemyTomato" parent="." instance=ExtResource("15_pmnry")]
+position = Vector2(178, -153)
+
+[node name="EnemyZucchini" parent="." instance=ExtResource("16_n1n4a")]
+position = Vector2(204, -208)
+
+[node name="EnemyBeet" parent="." instance=ExtResource("17_wmuwe")]
+position = Vector2(182, -222)
