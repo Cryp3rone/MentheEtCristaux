@@ -47,9 +47,8 @@ var _room #: Room
 @onready var main_sprite : Sprite2D = $"BodySprite"
 
 
-func _process(delta: float) -> void:
+func _process(delta: float ) -> void:
 	_update_state(delta)
-	
 	
 
 
