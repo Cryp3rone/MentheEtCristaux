@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj5se8cy8dqg4"]
+
+[ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="2_71pbt"]
+
+[node name="HugouLaScene" type="Node2D"]
+texture_filter = 1
+
+[node name="Player" parent="." instance=ExtResource("2_71pbt")]
