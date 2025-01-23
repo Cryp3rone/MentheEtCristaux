@@ -2,8 +2,8 @@ class_name Quest extends Node
 
 var dialogue = []
 
-var objectifs = []
-var objectifs_status = []
+var objectifs : Dictionary
+var objectifs_status : Dictionary
 
 var validation = []
 var is_complete = false
