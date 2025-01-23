@@ -46,7 +46,7 @@ _data = {
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oipgb"]
-radius = 12.0
+radius = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_m1jls")
@@ -65,11 +65,13 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_64mep")
 
 [node name="ChatDetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea"]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_oipgb")
 
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]

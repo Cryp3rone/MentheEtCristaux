@@ -7,6 +7,7 @@ static var all_enemies : Array[Enemy]
 
 var _state_timer : float = 0.0
 
+var type : String
 
 func _ready() -> void:
 	all_enemies.push_back(self)
@@ -45,6 +46,7 @@ func _set_state(state : STATE) -> void:
 			$AnimationPlayer.play("Idle")
 			_current_movement = stunned_movemement
 		STATE.DEAD:
+			QuestManager.update_quest(type)
 			_end_blink()
 			queue_free()
 			$AnimationPlayer.play("Death")

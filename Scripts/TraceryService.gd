@@ -1,6 +1,5 @@
 extends Node
 
-
 enum TEXT_TYPE {INTRO, Q1, Q2, COUT, VALID}
 
 var PATH = "res://Resources/JSONData/textData.json"
@@ -10,29 +9,11 @@ var Q2_PATH = "res://Resources/JSONData/q2.json"
 var COUT_PATH = "res://Resources/JSONData/cout.json"
 var VALID_PATH = "res://Resources/JSONData/valid.json"
 
-var questValues : Dictionary
+var quest_values : Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print_debug(generate_text(INTRO_PATH))
-	print_debug(generate_text(INTRO_PATH))
-	print_debug(generate_text(INTRO_PATH))
-	
-	print_debug(generate_text(Q1_PATH))
-	print_debug(generate_text(Q1_PATH))
-	print_debug(generate_text(Q1_PATH))
-	
-	print_debug(generate_text(Q2_PATH))
-	print_debug(generate_text(Q2_PATH))
-	print_debug(generate_text(Q2_PATH))
-	
-	print_debug(generate_text(COUT_PATH))
-	print_debug(generate_text(COUT_PATH))
-	print_debug(generate_text(COUT_PATH))
-	
-	print_debug(generate_text(VALID_PATH))
-	print_debug(generate_text(VALID_PATH))
-	print_debug(generate_text(VALID_PATH))
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,7 +35,7 @@ func open_dict(path : String) -> Dictionary:
 
 	return parsed_text
 
-func generate_text(path : String) -> String:
+func generate_text(path : String, _is_quest_data : bool, quest_data : Dictionary) -> String:
 	var input = open_dict(path)
 
 	if input.has("error") && input["error"].value:
@@ -67,10 +48,13 @@ func generate_text(path : String) -> String:
 	var final_text = input["origin"].pick_random()
 	
 	for match in assign_regex.search_all(final_text):
+		_is_quest_data = true
+
 		var key = match.get_string(1)
 		var value = input[match.get_string(2)].pick_random()
-
-		questValues[key] = value
+		
+		quest_values[key] = value
+		quest_data = quest_values
 
 		var pos = final_text.find(match.get_string(0))
 		var leng =  match.get_string(0).length()
@@ -97,8 +81,8 @@ func tag_recursive_generation(input : String, grammar_dict : Dictionary) -> Stri
 
 		if grammar_dict.has(tag):
 			value = grammar_dict[tag].pick_random()
-		elif questValues.has(tag):
-			value = questValues[tag]
+		elif quest_values.has(tag):
+			value = quest_values[tag]
 		else:
 			value = tag
 
