@@ -84,6 +84,7 @@ func _set_state(state : STATE) -> void:
 			$AnimationPlayer.play("Player idle")
 		STATE.RUN:
 			$AnimationPlayer.play("Player run")
+	print(_state)
 
 
 func _update_state(delta : float) -> void:
