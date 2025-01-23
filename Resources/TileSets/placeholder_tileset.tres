@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=44 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=45 format=3 uid="uid://boei5dbdfnuex"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://Scenes/key_collectible.tscn" id="1_k7xku"]
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="1_ylhcx"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cgikh6dyriura" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/2_LivingRoom_32x32.png" id="12_220hr"]
 [ext_resource type="Texture2D" uid="uid://sxvtcnb2vnsw" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/9_Fishing_32x32.png" id="13_mx2u0"]
 [ext_resource type="Texture2D" uid="uid://4xq47jmrp2nc" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/20_Japanese_interiors_32x32.png" id="15_t1gmd"]
+[ext_resource type="PackedScene" uid="uid://b63bafxhu0mni" path="res://Scenes/spawn-point.tscn" id="17_k6yp2"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -7796,6 +7797,7 @@ resource_name = "Obstacles"
 scenes/1/scene = ExtResource("4_xwwxj")
 scenes/2/scene = ExtResource("5_n5j7o")
 scenes/3/scene = ExtResource("6_oiqyd")
+scenes/4/scene = ExtResource("17_k6yp2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s2ke"]
 texture = ExtResource("7_28bl7")

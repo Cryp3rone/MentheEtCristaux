@@ -35,7 +35,7 @@ func _ready() -> void:
 		orientation = Utils.ORIENTATION.EAST if dir.x > 0 else Utils.ORIENTATION.WEST
 	else:
 		orientation = Utils.ORIENTATION.NORTH if dir.y < 0 else Utils.ORIENTATION.SOUTH
-
+	print("EH : ", abs(dir.x) > abs(dir.y) * ratio)
 	rotation_degrees = Utils.OrientationToAngle(orientation)
 	if closedNode.visible:
 		set_state(STATE.CLOSED)

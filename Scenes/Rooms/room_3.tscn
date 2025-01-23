@@ -6,7 +6,8 @@
 
 [node name="Room3" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
 script = ExtResource("1_nujyu")
-tilemap_layers = [NodePath("Floor"), NodePath("Props")]
+room_size = Vector2i(1, 2)
+tilemap_layers = [NodePath("Floor"), NodePath("Props"), NodePath("Props3"), NodePath("Props2"), NodePath("Props4")]
 room_test = ExtResource("2_fvxwa")
 
 [node name="Floor" type="TileMapLayer" parent="."]

@@ -14,13 +14,3 @@ tile_set = ExtResource("2_qjba0")
 [node name="Props" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAFAPv/AAAAAAAAAQACAPj/CgAHACoAAAACAPn/CgAHACsAAAACAPr/CgAHACkAAAADAPj/CgAIACoAAAADAPn/CgAIACsAAAADAPr/CgAIACkAAAAEAPj/CgAJACoAAAAEAPn/CgAJACsAAAAEAPr/CgAJACkAAAAFAPj/CgAKACoAAAAFAPn/CgAKACsAAAAFAPr/CgAKACkAAAAFAPz/CgALACoAAAAFAP3/CgALACsAAAAGAPv/CgAMACkAAAAGAPz/CgAMACoAAAAGAP3/CgAMACsAAAAHAPv/CgANACkAAAAHAPz/CgANACoAAAAHAP3/CgANACsAAAAIAPz/CgAOACoAAAAIAP3/CgAOACsAAAAIAPn/CwACAEMAAAAIAPr/CwACAEQAAAAGAPb/CwANADkAAAAGAPf/CwANADoAAAAHAPb/CwAOADkAAAAHAPf/CwAOADoAAAAIAPb/CwAPADkAAAAIAPf/CwAPADoAAAACAPb/CwANADkAAAACAPf/CwANADoAAAADAPb/CwAOADkAAAADAPf/CwAOADoAAAAEAPb/CwAPADkAAAAEAPf/CwAPADoAAAAJAP7/AAAAAAAAAgABAPj/AAAAAAAAAgADAPz/AgAAAAAAAgAHAPn/AgAAAAAAAgACAPz/CwABAEMAAAACAP3/CwABAEQAAAAIAPj/AAAAAAAAAQADAP3/CgAAACwAAAADAP7/CgAAAC0AAAADAP//CgAAAC4AAAAEAP3/CgABACwAAAAEAP7/CgABAC0AAAAEAP//CgABAC4AAAAGAP//AgAAAAAAAgAJAP3/AgAAAAAAAgABAPn/AgAAAAAAAgA=")
 tile_set = ExtResource("2_qjba0")
-
-[connection signal="body_entered" from="Props/@Area2D@25806" to="Props/@Area2D@25806" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25807" to="Props/@Area2D@25807" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25808" to="Props/@Area2D@25808" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25809" to="Props/@Area2D@25809" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25810" to="Props/@Area2D@25810" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25811" to="Props/@Area2D@25811" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25812" to="Props/@Area2D@25812" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25813" to="Props/@Area2D@25813" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@25814" to="Props/@Area2D@25814" method="_on_body_entered"]

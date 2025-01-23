@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b63bafxhu0mni"]
+
+[ext_resource type="Script" path="res://Scripts/Spawnpoint.gd" id="1_f2nkm"]
+[ext_resource type="Texture2D" uid="uid://b7tv7r0n1dc42" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/4_Bedroom_32x32.png" id="2_wtime"]
+
+[node name="Spawnpoint" type="Node2D"]
+script = ExtResource("1_f2nkm")
+
+[node name="Open" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_wtime")
+region_enabled = true
+region_rect = Rect2(384, 2888, 32, 32)

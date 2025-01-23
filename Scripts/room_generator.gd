@@ -7,6 +7,8 @@ static var Instance : Room_Generator
 @export var room_node : Node2D
 @export var starting_room : PackedScene
 
+@export var enemys : Array[PackedScene]
+
 var room_North : Array[PackedScene]
 var room_South : Array[PackedScene]
 var room_East : Array[PackedScene]

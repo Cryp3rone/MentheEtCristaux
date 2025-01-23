@@ -11,6 +11,7 @@ class_name Room extends Node2D
 static var all_rooms: Array[Room]
 
 var doors: Array[Door]
+var spawnpoints : Array[Spawnpoint]
 var room_generator = Room_Generator.Instance
 var file_path: String
 var is_generated: bool
@@ -133,6 +134,9 @@ func generate_room() -> void:
 		room_generator.Instance.room_node.add_child(room)
 		
 	rooms.clear()
+
+func spawn_enemy() -> void:
+	pass
 
 func check_for_valid_room(room_instantiate : Room) -> bool:
 	for room in all_rooms:
