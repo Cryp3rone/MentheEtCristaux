@@ -24,6 +24,6 @@ tile_map_data = PackedByteArray("AAAIAPf/CwAIAA0AAAAHAPf/CwAFAA0AAAADAPf/CwAKAA4
 tile_set = ExtResource("2_5ab5k")
 
 [connection signal="body_entered" from="Props/Spikes" to="Props/Spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@30858" to="Props/@Area2D@30858" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@33368" to="Props/@Area2D@33368" method="_on_body_entered"]
 [connection signal="body_entered" from="Props3/KeyCollectible" to="Props3/KeyCollectible" method="_on_body_entered"]
 [connection signal="body_entered" from="Props3/HeartCollectible" to="Props3/HeartCollectible" method="_on_body_entered"]
