@@ -4,10 +4,10 @@ static var all_enemies : Array[Enemy]
 
 @export var attack_warm_up : float = 0.5
 @export var attack_distance : float = 0.5
+@export var type : String
 
 var _state_timer : float = 0.0
 
-var type : String
 
 func _ready() -> void:
 	all_enemies.push_back(self)

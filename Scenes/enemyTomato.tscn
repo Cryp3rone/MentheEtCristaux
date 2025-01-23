@@ -110,6 +110,7 @@ gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_a4d0n")
 attack_distance = 30.0
+type = "tomates"
 sprites = [null, null]
 default_movement = ExtResource("2_ykr58")
 stunned_movemement = ExtResource("3_ynep7")
