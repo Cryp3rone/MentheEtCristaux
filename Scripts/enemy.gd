@@ -9,7 +9,6 @@ var _state_timer : float = 0.0
 
 
 func _ready() -> void:
-	$AnimationPlayer.play("Idle")
 	all_enemies.push_back(self)
 	for room in Room.all_rooms:
 		if room.contains(global_position):
@@ -21,7 +20,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	super(delta)
 	update_AI()
-
 
 func _exit_tree() -> void:
 	all_enemies.erase(self)
@@ -44,10 +42,12 @@ func _set_state(state : STATE) -> void:
 
 	match _state:
 		STATE.STUNNED:
+			$AnimationPlayer.play("Idle")
 			_current_movement = stunned_movemement
 		STATE.DEAD:
 			_end_blink()
 			queue_free()
+			$AnimationPlayer.play("Death")
 		_:
 			_current_movement = default_movement
 
@@ -62,4 +62,4 @@ func _update_state(delta : float) -> void:
 		STATE.ATTACKING:
 			if _state_timer >= attack_warm_up:
 				_spawn_attack_scene()
-				_set_state(STATE.IDLE)
+				##_set_state(STATE.IDLE)
