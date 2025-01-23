@@ -22,6 +22,8 @@ var can_add_room_south : bool = true
 var can_add_room_east : bool = true
 var can_add_room_west : bool = true
 
+var random = RandomNumberGenerator.new()
+
 @onready var _cam: CameraFollow = $/root/MainScene/Camera2D
 
 
@@ -33,6 +35,7 @@ func _ready() -> void:
 		call_deferred("generate_room")
 	elif is_generated:
 		call_deferred("generate_room")
+		call_deferred("spawn_enemy")
 	else:
 		call_deferred("load_doors_direction")
 
@@ -66,6 +69,7 @@ func generate_room() -> void:
 		return
 
 	var world_bound = get_world_bounds()
+	# Salles qui seront ajouté au Node à la fin de la fonction
 	var rooms : Array
 
 	for door in doors:
@@ -76,11 +80,13 @@ func generate_room() -> void:
 		if door.orientation == origin:
 			continue
 
+		# Tant que l'on a pas trouvé une salle spawnable, on continue d'essayer autant de fois qu'il y a de salle dans la liste des salles disponible
+		# Sinon, on applique l'état Wall à la porte 
 		while(!can_be_generated):
 			var packed_scene = room_generator.Instance.get_opposite_room_from_orientation(door.orientation)
 			if packed_scene != null:
 				var room_instantiate = packed_scene.instantiate()
-				#print("Pos door :", door.position, "; orientation : ", door.orientation)
+
 				match door.orientation:
 					Utils.ORIENTATION.NORTH:
 						#print("-- North --")
@@ -121,23 +127,31 @@ func generate_room() -> void:
 					print("Room instantiate is null")
 				
 				index += 1
-				#print("Index : ", index, " ; room size : ", room_generator.get_opposite_roomlist_size_from_orientation(door.orientation))
 				if index >= room_generator.get_opposite_roomlist_size_from_orientation(door.orientation) && !can_be_generated:
-					print("Max index reach")
-					#var adjacent_door = get_door(door.orientation, )
-					#if get
 					door.set_state(Door.STATE.WALL)
 					can_be_generated = true
 
 	for room in rooms:
-		print("Room number : ", room.room_pos)
 		room_generator.Instance.room_node.add_child(room)
 		
 	rooms.clear()
 
 func spawn_enemy() -> void:
-	pass
+	var random_index = random.randi_range(0,1)
+	var packedEnemy : PackedScene
 
+	if random_index == 0:
+		packedEnemy = room_generator.get_random_priority_enemy()
+	
+	if packedEnemy == null:
+		packedEnemy = room_generator.get_random_enemy()
+
+	for spawnpoint in spawnpoints:
+		var enemy_instantiate = packedEnemy.instantiate()
+		enemy_instantiate.position = spawnpoint.position
+		room_generator.enemy_node.add_child(enemy_instantiate)
+	
+# Verifie si la salle entre en collision avec un autre Rect2 de salle
 func check_for_valid_room(room_instantiate : Room) -> bool:
 	for room in all_rooms:
 		if room.get_world_bounds().intersects(room_instantiate.get_world_bounds()) && room != room_instantiate:
@@ -145,7 +159,7 @@ func check_for_valid_room(room_instantiate : Room) -> bool:
 		
 	return true
 	
-
+# Verifie si l'on a atteint la taille maximale de la map
 func check_generation_size(room_instantiate : Room, orientation : Utils.ORIENTATION) -> bool:
 	var pos = room_instantiate.room_pos
 	var max_size = room_generator.Instance.map_size
@@ -173,14 +187,13 @@ func check_generation_size(room_instantiate : Room, orientation : Utils.ORIENTAT
 				can_add_room_west = false
 				return false
 
-	#print("Room size : ", pos, "; ", max_X_reached, "; ",  min_X_reached, "; ",  max_Y_reached, "; ",  min_Y_reached)
-	#print("Can add n :", can_add_room_north, " ; s : ",can_add_room_south, " ; e :", can_add_room_east, " ; w :", can_add_room_west)
 	var mapSizeReached = (max_X_reached || min_X_reached) && (max_Y_reached || min_Y_reached)
 	if mapSizeReached:
 		room_generator.Instance.has_end_generation = true
 		return false
 	
 	return true
+
 
 func get_local_bounds() -> Rect2:
 	var room_bounds = Rect2()

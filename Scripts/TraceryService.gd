@@ -60,7 +60,7 @@ func generate_text(path : String, _is_quest_data : bool, quest_data : Dictionary
 			_is_quest_data = true
 			temp_quest_tag.push_back(value)
 		elif key == "NBMAINLEGUME" || key == "NBSECONDARYLEGUME":
-			temp_quest_val.push_back(value)
+			temp_quest_val.push_back(value.to_int())
 
 		var pos = final_text.find(match.get_string(0))
 		var leng =  match.get_string(0).length()

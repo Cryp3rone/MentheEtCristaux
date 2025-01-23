@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hud4gw4in4fe"]
+[gd_scene load_steps=20 format=3 uid="uid://hud4gw4in4fe"]
 
 [ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/room_1.tscn" id="1_h64id"]
 [ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="2_o3p3c"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bu3mpyvc3fv1e" path="res://Scenes/Rooms/room_8.tscn" id="10_nai6n"]
 [ext_resource type="PackedScene" uid="uid://dbvu4ll33u4od" path="res://Scenes/Rooms/room_9.tscn" id="11_iufbm"]
 [ext_resource type="PackedScene" uid="uid://sfme73xkhjhj" path="res://Scenes/Rooms/room_10.tscn" id="12_ue26i"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyBeet.tscn" id="13_er3si"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyCarrot.tscn" id="14_0krty"]
+[ext_resource type="PackedScene" uid="uid://134kus1mu2n2" path="res://Scenes/enemyRat.tscn" id="15_jj2ej"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemyTomato.tscn" id="16_sj5ek"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyZucchini.tscn" id="17_a420v"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -29,6 +34,7 @@ map_size = Vector2i(5, 5)
 rooms = Array[PackedScene]([ExtResource("1_h64id"), ExtResource("2_o3p3c"), ExtResource("4_qrckt"), ExtResource("6_vcill"), ExtResource("8_sxwqb"), ExtResource("9_ixlo7"), ExtResource("10_nai6n"), ExtResource("11_iufbm"), ExtResource("12_ue26i")])
 room_node = NodePath("../Dungeon")
 starting_room = ExtResource("5_7bqtx")
+enemys = Array[PackedScene]([ExtResource("13_er3si"), ExtResource("14_0krty"), ExtResource("15_jj2ej"), ExtResource("16_sj5ek"), ExtResource("17_a420v")])
 
 [node name="Player" parent="." instance=ExtResource("6_2r37k")]
 position = Vector2(47, -63)
