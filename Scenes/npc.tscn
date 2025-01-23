@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt55v5rpj5vk1"]
+[gd_scene load_steps=9 format=3 uid="uid://dt55v5rpj5vk1"]
 
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="1_m1jls"]
 [ext_resource type="Texture2D" uid="uid://s5lpa78bmlnq" path="res://Sprites/SpriteSheet/Boss_idle.png" id="2_c5kqk"]
+[ext_resource type="PackedScene" uid="uid://cx641jksgtlil" path="res://Scenes/dialogue.tscn" id="3_ah20e"]
 
 [sub_resource type="Animation" id="Animation_2esc5"]
 resource_name = "Idle"
@@ -74,5 +75,12 @@ shape = SubResource("CircleShape2D_64mep")
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_oipgb")
 
+[node name="Dialogue" parent="." instance=ExtResource("3_ah20e")]
+offset_left = -64.0
+offset_top = -91.0
+offset_right = 64.0
+offset_bottom = -12.0
+
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_control_dialogue_finished"]

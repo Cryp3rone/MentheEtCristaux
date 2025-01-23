@@ -55,6 +55,10 @@ func _update_inputs() -> void:
 
 		if Input.is_action_pressed("Attack"):
 			_attack()
+
+		if Input.is_action_pressed("Attack"):
+			_attack()
+			
 	else:
 		_direction = Vector2.ZERO
 
