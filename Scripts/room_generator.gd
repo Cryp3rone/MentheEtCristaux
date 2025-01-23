@@ -5,6 +5,7 @@ static var Instance : Room_Generator
 @export var map_size : Vector2i
 @export var rooms : Array[PackedScene]
 @export var room_node : Node2D
+@export var starting_room : PackedScene
 
 var room_North : Array[PackedScene]
 var room_South : Array[PackedScene]
@@ -30,7 +31,6 @@ func load_all_rooms() -> void:
 		index += 1
 
 		if index >= rooms.size():
-			print("Rooms size : ", rooms.size(), " ; index : ", index)
 			room_instantiate.all_rooms.clear()
 
 	call_deferred("start_generation")
@@ -39,8 +39,7 @@ func load_all_rooms() -> void:
 
 func start_generation() -> void:
 	has_end_generation = false
-	var random_index = random.randi_range(0,rooms.size()-1)
-	var room_instantiate = rooms[random_index].instantiate()
+	var room_instantiate = starting_room.instantiate()
 	room_instantiate.is_start_room = true;
 	room_instantiate.position = Vector2.ZERO
 	room_node.add_child(room_instantiate)

@@ -40,22 +40,18 @@ func load_doors_direction() -> void:
 	for door in doors:
 		match door.orientation:
 			Utils.ORIENTATION.NORTH:
-				print("Is in list : ", room_generator.room_North.has(load(file_path)))
 				if !room_generator.room_North.has(load(file_path)):
 					room_generator.room_North.push_back(load(file_path))
 					print("Chemin packed : ", file_path, "; room north : ", room_generator.room_North.size())
 			Utils.ORIENTATION.SOUTH:
-				print("Is in list : ", room_generator.room_South.has(load(file_path)))
 				if !room_generator.room_South.has(load(file_path)):
 					room_generator.room_South.push_back(load(file_path))
 					print("Chemin packed : ", file_path, "; room south : ", room_generator.room_South.size())
 			Utils.ORIENTATION.EAST:
-				print("Is in list : ", room_generator.room_East.has(load(file_path)))
 				if !room_generator.room_East.has(load(file_path)):
 					room_generator.room_East.push_back(load(file_path))
 					print("Chemin packed : ", file_path, "; room east : ", room_generator.room_East.size())
 			Utils.ORIENTATION.WEST:
-				print("Is in list : ", room_generator.room_West.has(load(file_path)))
 				if !room_generator.room_West.has(load(file_path)):
 					room_generator.room_West.push_back(load(file_path))
 					print("Chemin packed : ", file_path, "; room west : ", room_generator.room_West.size())
@@ -72,58 +68,50 @@ func generate_room() -> void:
 	var rooms : Array
 
 	for door in doors:
-		if door.orientation == origin:
-			break
-
+		
 		var index = 0
 		var can_be_generated = false
+
+		if door.orientation == origin:
+			continue
 
 		while(!can_be_generated):
 			var packed_scene = room_generator.Instance.get_opposite_room_from_orientation(door.orientation)
 			if packed_scene != null:
 				var room_instantiate = packed_scene.instantiate()
-				#print("Pos door :", door.position, "; orientation : ", door.orientation ,"; room pos : ", get_center_from_room())
-				match door.orientation: # -> Problème encore ici, position à set "normalement" de la façon suivante mais en arrivant à acceder aux valeurs
+				#print("Pos door :", door.position, "; orientation : ", door.orientation)
+				match door.orientation:
 					Utils.ORIENTATION.NORTH:
 						#print("-- North --")
 						if can_add_room_north:
-							room_instantiate.position = position # - Vector2(get_center_from_room().x - door.position.x , 0)
-							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position = position
 							room_instantiate.position -= Vector2(0, world_bound.size.y)
-							#print("Pos after modif : ", room_instantiate.position)
 							room_instantiate.room_pos = room_pos + Vector2i(0, room_size.y)
 							room_instantiate.origin = Utils.ORIENTATION.SOUTH
 					Utils.ORIENTATION.SOUTH:
 						#print("-- South --")
 						if can_add_room_south:
-							room_instantiate.position = position # - Vector2(get_center_from_room().x - door.position.x , 0)
-							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position = position
 							room_instantiate.position += Vector2(0, world_bound.size.y)
-							#print("Pos after modif : ", room_instantiate.position)
 							room_instantiate.room_pos = room_pos + Vector2i(0, -room_size.y)
 							room_instantiate.origin = Utils.ORIENTATION.NORTH
 					Utils.ORIENTATION.EAST:
 						#print("-- East --")
 						if can_add_room_east:
-							room_instantiate.position = position # - Vector2(0, get_center_from_room().y - door.position.y )
-							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position = position
 							room_instantiate.position += Vector2(world_bound.size.x, 0)
-							#print("Pos after modif : ", room_instantiate.position)
 							room_instantiate.room_pos = room_pos + Vector2i(room_size.x, 0)
 							room_instantiate.origin = Utils.ORIENTATION.WEST
 					Utils.ORIENTATION.WEST:
 						#print("-- West --")
 						if can_add_room_west:
-							room_instantiate.position = position # - Vector2(0, get_center_from_room().y - door.position.y )
-							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position = position
 							room_instantiate.position -= Vector2(world_bound.size.x, 0)
-							#print("Pos after modif : ", room_instantiate.position)
 							room_instantiate.room_pos = room_pos + Vector2i(-room_size.x, 0)
 							room_instantiate.origin = Utils.ORIENTATION.EAST
 
 				if room_instantiate != null:
 					can_be_generated = check_for_valid_room(room_instantiate) && check_generation_size(room_instantiate, door.orientation)
-					print("can be generated ? : ", can_be_generated)
 
 					if can_be_generated:	
 						room_instantiate.is_generated = true;
@@ -132,9 +120,11 @@ func generate_room() -> void:
 					print("Room instantiate is null")
 				
 				index += 1
-				print("Index : ", index, " ; room size : ", room_generator.get_opposite_roomlist_size_from_orientation(door.orientation))
-				if index >= room_generator.get_opposite_roomlist_size_from_orientation(door.orientation):
+				#print("Index : ", index, " ; room size : ", room_generator.get_opposite_roomlist_size_from_orientation(door.orientation))
+				if index >= room_generator.get_opposite_roomlist_size_from_orientation(door.orientation) && !can_be_generated:
 					print("Max index reach")
+					#var adjacent_door = get_door(door.orientation, )
+					#if get
 					door.set_state(Door.STATE.WALL)
 					can_be_generated = true
 
