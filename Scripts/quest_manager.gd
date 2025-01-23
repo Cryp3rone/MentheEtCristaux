@@ -14,6 +14,7 @@ func generate_quest() -> Quest:
 
 	for data in quest_data:
 		quest.objectifs[data] = quest_data[data]
+		Room_Generator.Instance.add_enemy_to_priority_list(data, quest_data[data])
 		quest.objectifs_status[data] = 0
 
 	quest.dialogue.push_back(TraceryService.generate_text(TraceryService.COUT_PATH, false, quest_data))

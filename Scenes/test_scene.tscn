@@ -1,0 +1,42 @@
+[gd_scene load_steps=20 format=3 uid="uid://hud4gw4in4fe"]
+
+[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/room_1.tscn" id="1_h64id"]
+[ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="2_o3p3c"]
+[ext_resource type="PackedScene" uid="uid://d2bd4nrdruls4" path="res://Scenes/Rooms/room_4.tscn" id="4_qrckt"]
+[ext_resource type="PackedScene" uid="uid://s6ah3dc0wqxd" path="res://Scenes/Rooms/room_3.tscn" id="5_7bqtx"]
+[ext_resource type="Script" path="res://Scripts/room_generator.gd" id="5_8xsp0"]
+[ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="5_43onh"]
+[ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="6_2r37k"]
+[ext_resource type="PackedScene" uid="uid://driwbttp0b23s" path="res://Scenes/Rooms/room_5.tscn" id="6_vcill"]
+[ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://Scenes/hud.tscn" id="8_ao0g3"]
+[ext_resource type="PackedScene" uid="uid://dwr2tnm34dts3" path="res://Scenes/Rooms/room_6.tscn" id="8_sxwqb"]
+[ext_resource type="PackedScene" uid="uid://bj5mdjrfm4kyr" path="res://Scenes/Rooms/room_7.tscn" id="9_ixlo7"]
+[ext_resource type="PackedScene" uid="uid://bu3mpyvc3fv1e" path="res://Scenes/Rooms/room_8.tscn" id="10_nai6n"]
+[ext_resource type="PackedScene" uid="uid://dbvu4ll33u4od" path="res://Scenes/Rooms/room_9.tscn" id="11_iufbm"]
+[ext_resource type="PackedScene" uid="uid://sfme73xkhjhj" path="res://Scenes/Rooms/room_10.tscn" id="12_ue26i"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyBeet.tscn" id="13_er3si"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyCarrot.tscn" id="14_0krty"]
+[ext_resource type="PackedScene" uid="uid://134kus1mu2n2" path="res://Scenes/enemyRat.tscn" id="15_jj2ej"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemyTomato.tscn" id="16_sj5ek"]
+[ext_resource type="PackedScene" path="res://Scenes/enemyZucchini.tscn" id="17_a420v"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Dungeon" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(175, -145)
+script = ExtResource("5_43onh")
+
+[node name="RoomManager" type="Node2D" parent="." node_paths=PackedStringArray("room_node")]
+script = ExtResource("5_8xsp0")
+map_size = Vector2i(5, 5)
+rooms = Array[PackedScene]([ExtResource("1_h64id"), ExtResource("2_o3p3c"), ExtResource("4_qrckt"), ExtResource("6_vcill"), ExtResource("8_sxwqb"), ExtResource("9_ixlo7"), ExtResource("10_nai6n"), ExtResource("11_iufbm"), ExtResource("12_ue26i")])
+room_node = NodePath("../Dungeon")
+starting_room = ExtResource("5_7bqtx")
+enemys = Array[PackedScene]([ExtResource("13_er3si"), ExtResource("14_0krty"), ExtResource("15_jj2ej"), ExtResource("16_sj5ek"), ExtResource("17_a420v")])
+
+[node name="Player" parent="." instance=ExtResource("6_2r37k")]
+position = Vector2(47, -63)
+
+[node name="hud" parent="." instance=ExtResource("8_ao0g3")]
