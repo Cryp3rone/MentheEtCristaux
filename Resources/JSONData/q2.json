@@ -1,0 +1,14 @@
+{
+	"origin":["[lieu:#lieux#]#desinfecte.capitalize# #lieu#, des #rats# qui s'y #trouve# !","[lieu:#lieuxMasc#] #lieu.capitalize# est #infeste# de #rats#, #occupation# t'en #immediat# !","[lieu:#lieux#]Va dans #lieu# et #extermine# les #rats# #encore# #caches# là bas !" ],
+	"lieuxMasc":["le garde manger","le potager","le cellier","le fourneau","mon bureau"],
+	"lieux":["la chambre froide","le garde manger","le potager intérieur","la salle des épices","la cuisine principale","le cellier","le fourneau","la laverie","mon bureau"],
+	"desinfecte":["nettoie","désinfecte","purge","vide","purifie"],
+	"rats":["bestioles","rongeurs","nuisibles","vermines","monstres","rats"],
+	"trouve":["planquent","cachent","logent","nichent","réfugient","terrent","trouvent"],
+	"infeste":["infesté","ravagé","saccagé","envahie"],
+	"occupation":["occupe","charges"],
+	"immediat":["tout de suite","maintenant","impérativement","sans plus attendre","au plus vite","vite","expressément","de suite"],
+	"extermine":["extermine","décime","massacre","liquide","termine"],
+	"encore":["encore","toujours"],
+	"caches":["planqués","réfugiés","cachés","terrés","enfouis","dissimulés"]
+}

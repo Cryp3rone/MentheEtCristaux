@@ -1,0 +1,9 @@
+{
+	"origin":["#salutations# ? #exasperation#"],
+	"salutations":["#politesse#, c'est toi #qualificatif#"],
+	"exasperation":["Tu as #superlatif# #temps# de retard."],
+	"politesse":["Salut","Eh oh","Bong sang","Bonjour","Ah enfin","Ah bah"],
+	"qualificatif":["le nouveau", "le gringalet","le stagiaire","le bambin","l'apprenti","le novice","le débutant","l'assistant","le chérubin","le commis"],
+	"superlatif":["presque","plus de"],
+	"temps":["une heure","un quart d'heure","une demi heure","1 jour","1 semaine"]
+}
