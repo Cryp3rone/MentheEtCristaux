@@ -24,17 +24,20 @@
 
 [node name="Dungeon" type="Node2D" parent="."]
 
+[node name="Enemy" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(175, -145)
 script = ExtResource("5_43onh")
 
-[node name="RoomManager" type="Node2D" parent="." node_paths=PackedStringArray("room_node")]
+[node name="RoomManager" type="Node2D" parent="." node_paths=PackedStringArray("room_node", "enemy_node")]
 script = ExtResource("5_8xsp0")
 map_size = Vector2i(5, 5)
 rooms = Array[PackedScene]([ExtResource("1_h64id"), ExtResource("2_o3p3c"), ExtResource("4_qrckt"), ExtResource("6_vcill"), ExtResource("8_sxwqb"), ExtResource("9_ixlo7"), ExtResource("10_nai6n"), ExtResource("11_iufbm"), ExtResource("12_ue26i")])
 room_node = NodePath("../Dungeon")
 starting_room = ExtResource("5_7bqtx")
 enemys = Array[PackedScene]([ExtResource("13_er3si"), ExtResource("14_0krty"), ExtResource("15_jj2ej"), ExtResource("16_sj5ek"), ExtResource("17_a420v")])
+enemy_node = NodePath("../Enemy")
 
 [node name="Player" parent="." instance=ExtResource("6_2r37k")]
 position = Vector2(47, -63)

@@ -94,11 +94,11 @@ func add_enemy_to_priority_list(enemy : String, nbToSpawn : int) -> void:
 
 # Convertir le resultât du JSON en PackedScene pour faire spawner l'ennemie
 func get_enemy_from_string(enemy : String) -> PackedScene:
+	print("Enemy : ", enemy)
 	for packedEnemy in enemys:
 		var scene_path = packedEnemy.resource_path
 		var enemy_name = scene_path.get_file()
-		print(packedEnemy.resource_path)
-		print(enemy_name.find(enemy) != -1)
+
 		if enemy_name.find(enemy) != -1:
 			return packedEnemy
 

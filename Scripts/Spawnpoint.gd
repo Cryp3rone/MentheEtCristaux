@@ -14,8 +14,3 @@ func _ready() -> void:
 
 	_room = node
 	_room.spawnpoints.push_back(self)
-	print("Added spawnpoint")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -20,5 +20,8 @@ tile_map_data = PackedByteArray("AAADAPj/EAAIAAQAAAADAPn/EAAIAAUAAAAEAPj/EAAJAAQ
 tile_set = ExtResource("2_c7v45")
 
 [node name="Props3" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAIAPz/BwAJAEEAAAAJAPz/BwAPABwAAAAJAP3/BwAPAB0AAAAJAP7/BwAPAB4AAAACAPr/AgAAAAAAAQAIAPr/AgAAAAAAAQAFAPv/AAAAAAAAAQAFAPz/AAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAIAPz/BwAJAEEAAAAJAPz/BwAPABwAAAAJAP3/BwAPAB0AAAAJAP7/BwAPAB4AAAAFAPv/AAAAAAAAAQAFAPz/AAAAAAAAAQACAPr/AgAAAAAABAAIAPr/AgAAAAAABAA=")
 tile_set = ExtResource("2_c7v45")
+
+[connection signal="body_entered" from="Props3/KeyCollectible" to="Props3/KeyCollectible" method="_on_body_entered"]
+[connection signal="body_entered" from="Props3/@Area2D@78936" to="Props3/@Area2D@78936" method="_on_body_entered"]
