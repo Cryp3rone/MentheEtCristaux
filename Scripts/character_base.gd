@@ -49,7 +49,6 @@ var _room #: Room
 
 func _process(delta: float ) -> void:
 	_update_state(delta)
-	
 
 
 func apply_hit(attack : Attack) -> void:
@@ -85,6 +84,7 @@ func _set_state(state : STATE) -> void:
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+
 	if _has_to_apply_knockback:
 		state.linear_velocity = _knockback_value
 		_has_to_apply_knockback = false
@@ -102,6 +102,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 		else:
 			state.linear_velocity = Vector2.ZERO
+			
+		
 
 
 
@@ -170,4 +172,5 @@ func _spawn_attack_scene() -> void:
 	spawned_attack.attack_owner = self
 
 func _can_move() -> bool:
-	return _state == STATE.IDLE
+	
+	return (_state == STATE.IDLE || _state == STATE.RUN)
