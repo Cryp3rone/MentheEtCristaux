@@ -30,5 +30,6 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 
 
 func _on_control_dialogue_finished() -> void:
+	quest.start_quest()
 	await get_tree().create_timer(2).timeout
 	is_chatting = false

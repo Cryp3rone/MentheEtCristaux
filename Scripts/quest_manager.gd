@@ -1,5 +1,7 @@
 extends Node
 
+signal score_updated(tag, val)
+
 var quests = []
 
 func generate_quest() -> Quest:
@@ -29,3 +31,5 @@ func update_quest(tag : String):
 			for objectif in quest.objectifs:
 				if objectif.value == quest.objectifs_status[objectif.key].value :
 					quest.is_complete = true
+
+			emit_signal("score_updated", tag, quest.objectifs_status[tag])
