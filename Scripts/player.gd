@@ -7,7 +7,7 @@ static var Instance : Player
 
 # Collectible
 var key_count : int
-
+var last_state : STATE
 
 func _init() -> void:
 	Instance = self
@@ -15,7 +15,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	_set_state(STATE.IDLE)
-
+	
 
 func _process(delta: float) -> void:
 	super(delta)
@@ -72,6 +72,18 @@ func _set_state(state : STATE) -> void:
 
 	if !_can_move():
 		_direction = Vector2.ZERO
+		
+	match _state:
+		STATE.IDLE:
+			$AnimationPlayer.play("Player idle")
+		STATE.ATTACKING:
+			$AnimationPlayer.play("Player hit")
+		STATE.DEAD:
+			$AnimationPlayer.play("Player death")
+		STATE.STUNNED:
+			$AnimationPlayer.play("Player idle")
+		STATE.RUN:
+			$AnimationPlayer.play("Player run")
 
 
 func _update_state(delta : float) -> void:
@@ -79,4 +91,4 @@ func _update_state(delta : float) -> void:
 	match _state:
 		STATE.ATTACKING:
 			_spawn_attack_scene()
-			_set_state(STATE.IDLE)
+			##_set_state(STATE.IDLE)

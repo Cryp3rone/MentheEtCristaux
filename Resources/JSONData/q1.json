@@ -1,0 +1,10 @@
+{
+	"origin":["[MAINLEGUME:#legumes#] [SIDELEGUME:#legumes#] [NBMAINLEGUME:#chiffresMAINLEGUME#][NBSECONDARYLEGUME:#chiffresSIDELEGUME#]#demande# #NBMAINLEGUME# #MAINLEGUME# et #NBSECONDARYLEGUME# #SIDELEGUME# pour #recettes# aux #MAINLEGUME#, et #aggressif# !"],
+	"demande":["J'ai besoin de","Il me faut","Va me #chercher#"],
+	"chercher":["trouver","prendre","ramener","dégotter","rapporter","choper","rapporter"],
+	"legumes":["courgettes","carottes","potimarrons","choux-fleurs","poireaux","oignons","artichauds","piments","betteraves"],
+	"recettes":["ma soupe","mon potage","ma recette","ma bouillie","mon ramen","mon bouillon"],
+	"chiffresMAINLEGUME":["3","4","5"],
+	"chiffresSIDELEGUME":["2","3"],
+	"aggressif":["plus vite que ça","que ça saute","au boulot","ne traine pas","sans rêvasser","sans trainer","dépêche toi"]
+}
