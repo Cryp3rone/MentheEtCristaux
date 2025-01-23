@@ -64,3 +64,18 @@ func get_opposite_room_from_orientation(orientation : Utils.ORIENTATION) -> Pack
 			return null
 	
 	return null
+
+func get_opposite_roomlist_size_from_orientation(orientation : Utils.ORIENTATION) -> int:
+	match orientation:
+		Utils.ORIENTATION.NORTH:
+			return room_South.size()
+		Utils.ORIENTATION.SOUTH:
+			return room_North.size()
+		Utils.ORIENTATION.EAST:
+			return room_West.size()
+		Utils.ORIENTATION.WEST:
+			return room_East.size()
+		Utils.ORIENTATION.NONE:
+			return 0
+	
+	return 0

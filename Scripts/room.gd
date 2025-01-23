@@ -65,74 +65,86 @@ func load_doors_direction() -> void:
 
 func generate_room() -> void:
 	if room_generator.Instance.has_end_generation:
+		print("-------------- End GEN ----------------")
 		return
 
 	var world_bound = get_world_bounds()
 	var rooms : Array
-		
+
 	for door in doors:
 		if door.orientation == origin:
 			break
 
+		var index = 0
 		var can_be_generated = false
 
-		var packed_scene = room_generator.Instance.get_opposite_room_from_orientation(door.orientation)
-		if packed_scene != null:
-			var room_instantiate = packed_scene.instantiate()
-			#print("Pos door :", door.position, "; orientation : ", door.orientation ,"; room pos : ", get_center_from_room())
-			match door.orientation: # -> Problème encore ici, position à set "normalement" de la façon suivante mais en arrivant à acceder aux valeurs
-				Utils.ORIENTATION.NORTH:
-					#print("-- North --")
-					if can_add_room_north:
-						room_instantiate.position = position - Vector2(get_center_from_room().x - door.position.x , 0)
-						#print("Pos before modif : ", room_instantiate.position)
-						room_instantiate.position -= Vector2(0, world_bound.size.y)
-						#print("Pos after modif : ", room_instantiate.position)
-						room_instantiate.room_pos = room_pos + Vector2i(0, room_size.y)
-						room_instantiate.origin = Utils.ORIENTATION.SOUTH
-				Utils.ORIENTATION.SOUTH:
-					#print("-- South --")
-					if can_add_room_south:
-						room_instantiate.position = position - Vector2(get_center_from_room().x - door.position.x , 0)
-						#print("Pos before modif : ", room_instantiate.position)
-						room_instantiate.position += Vector2(0, world_bound.size.y)
-						#print("Pos after modif : ", room_instantiate.position)
-						room_instantiate.room_pos = room_pos + Vector2i(0, -room_size.y)
-						room_instantiate.origin = Utils.ORIENTATION.NORTH
-				Utils.ORIENTATION.EAST:
-					#print("-- East --")
-					if can_add_room_east:
-						room_instantiate.position = position - Vector2(0, get_center_from_room().y - door.position.y )
-						#print("Pos before modif : ", room_instantiate.position)
-						room_instantiate.position += Vector2(world_bound.size.x, 0)
-						#print("Pos after modif : ", room_instantiate.position)
-						room_instantiate.room_pos = room_pos + Vector2i(room_size.x, 0)
-						room_instantiate.origin = Utils.ORIENTATION.WEST
-				Utils.ORIENTATION.WEST:
-					#print("-- West --")
-					if can_add_room_west:
-						room_instantiate.position = position - Vector2(0, get_center_from_room().y - door.position.y )
-						#print("Pos before modif : ", room_instantiate.position)
-						room_instantiate.position -= Vector2(world_bound.size.x, 0)
-						#print("Pos after modif : ", room_instantiate.position)
-						room_instantiate.room_pos = room_pos + Vector2i(-room_size.x, 0)
-						room_instantiate.origin = Utils.ORIENTATION.EAST
+		while(!can_be_generated):
+			var packed_scene = room_generator.Instance.get_opposite_room_from_orientation(door.orientation)
+			if packed_scene != null:
+				var room_instantiate = packed_scene.instantiate()
+				#print("Pos door :", door.position, "; orientation : ", door.orientation ,"; room pos : ", get_center_from_room())
+				match door.orientation: # -> Problème encore ici, position à set "normalement" de la façon suivante mais en arrivant à acceder aux valeurs
+					Utils.ORIENTATION.NORTH:
+						#print("-- North --")
+						if can_add_room_north:
+							room_instantiate.position = position # - Vector2(get_center_from_room().x - door.position.x , 0)
+							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position -= Vector2(0, world_bound.size.y)
+							#print("Pos after modif : ", room_instantiate.position)
+							room_instantiate.room_pos = room_pos + Vector2i(0, room_size.y)
+							room_instantiate.origin = Utils.ORIENTATION.SOUTH
+					Utils.ORIENTATION.SOUTH:
+						#print("-- South --")
+						if can_add_room_south:
+							room_instantiate.position = position # - Vector2(get_center_from_room().x - door.position.x , 0)
+							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position += Vector2(0, world_bound.size.y)
+							#print("Pos after modif : ", room_instantiate.position)
+							room_instantiate.room_pos = room_pos + Vector2i(0, -room_size.y)
+							room_instantiate.origin = Utils.ORIENTATION.NORTH
+					Utils.ORIENTATION.EAST:
+						#print("-- East --")
+						if can_add_room_east:
+							room_instantiate.position = position # - Vector2(0, get_center_from_room().y - door.position.y )
+							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position += Vector2(world_bound.size.x, 0)
+							#print("Pos after modif : ", room_instantiate.position)
+							room_instantiate.room_pos = room_pos + Vector2i(room_size.x, 0)
+							room_instantiate.origin = Utils.ORIENTATION.WEST
+					Utils.ORIENTATION.WEST:
+						#print("-- West --")
+						if can_add_room_west:
+							room_instantiate.position = position # - Vector2(0, get_center_from_room().y - door.position.y )
+							#print("Pos before modif : ", room_instantiate.position)
+							room_instantiate.position -= Vector2(world_bound.size.x, 0)
+							#print("Pos after modif : ", room_instantiate.position)
+							room_instantiate.room_pos = room_pos + Vector2i(-room_size.x, 0)
+							room_instantiate.origin = Utils.ORIENTATION.EAST
 
-			if room_instantiate != null:
-				can_be_generated = check_for_valid_room(room_instantiate, door.orientation) && check_generation_size(room_instantiate, door.orientation)
-				#print("can be generated ? : ", can_be_generated)
+				if room_instantiate != null:
+					can_be_generated = check_for_valid_room(room_instantiate) && check_generation_size(room_instantiate, door.orientation)
+					print("can be generated ? : ", can_be_generated)
 
-				if can_be_generated:	
-					room_instantiate.is_generated = true;
-					rooms.push_back(room_instantiate)
-			
+					if can_be_generated:	
+						room_instantiate.is_generated = true;
+						rooms.push_back(room_instantiate)
+				else:
+					print("Room instantiate is null")
+				
+				index += 1
+				print("Index : ", index, " ; room size : ", room_generator.get_opposite_roomlist_size_from_orientation(door.orientation))
+				if index >= room_generator.get_opposite_roomlist_size_from_orientation(door.orientation):
+					print("Max index reach")
+					door.set_state(Door.STATE.WALL)
+					can_be_generated = true
+
 	for room in rooms:
-		#print("Room number : ", room.room_pos)
+		print("Room number : ", room.room_pos)
 		room_generator.Instance.room_node.add_child(room)
 		
 	rooms.clear()
 
-func check_for_valid_room(room_instantiate : Room, orientation : Utils.ORIENTATION) -> bool:
+func check_for_valid_room(room_instantiate : Room) -> bool:
 	for room in all_rooms:
 		if room.get_world_bounds().intersects(room_instantiate.get_world_bounds()) && room != room_instantiate:
 			return false
@@ -167,8 +179,8 @@ func check_generation_size(room_instantiate : Room, orientation : Utils.ORIENTAT
 				can_add_room_west = false
 				return false
 
-	print("Room size : ", pos, "; ", max_X_reached, "; ",  min_X_reached, "; ",  max_Y_reached, "; ",  min_Y_reached)
-	print("Can add n :", can_add_room_north, " ; s : ",can_add_room_south, " ; e :", can_add_room_east, " ; w :", can_add_room_west)
+	#print("Room size : ", pos, "; ", max_X_reached, "; ",  min_X_reached, "; ",  max_Y_reached, "; ",  min_Y_reached)
+	#print("Can add n :", can_add_room_north, " ; s : ",can_add_room_south, " ; e :", can_add_room_east, " ; w :", can_add_room_west)
 	var mapSizeReached = (max_X_reached || min_X_reached) && (max_Y_reached || min_Y_reached)
 	if mapSizeReached:
 		room_generator.Instance.has_end_generation = true
