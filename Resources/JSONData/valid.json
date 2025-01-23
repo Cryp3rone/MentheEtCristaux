@@ -1,0 +1,6 @@
+{
+	"origin":["#wellDone.capitalize# #qualificatif#","Tu as été #efficacite# #qualificatif#, #wellDone#."],
+	"wellDone" : ["bon boulot","bon travail","bien joué","excellent","bon taff","pas mauvais","bon début","masterclass"],
+	"qualificatif":["le nouveau", "le gringalet","le stagiaire","le bambin","l'apprenti","le novice","le débutant","l'assisstant","le chérubin","le commis"],
+	"efficacite":["performant","efficient","proactif","efficace"]
+}
