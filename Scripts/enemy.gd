@@ -4,6 +4,7 @@ static var all_enemies : Array[Enemy]
 
 @export var attack_warm_up : float = 0.5
 @export var attack_distance : float = 0.5
+@export var type : String
 
 var _state_timer : float = 0.0
 
@@ -45,6 +46,7 @@ func _set_state(state : STATE) -> void:
 			$AnimationPlayer.play("Idle")
 			_current_movement = stunned_movemement
 		STATE.DEAD:
+			QuestManager.update_quest(type)
 			_end_blink()
 			queue_free()
 			$AnimationPlayer.play("Death")
