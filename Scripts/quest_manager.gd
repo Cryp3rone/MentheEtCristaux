@@ -11,7 +11,6 @@ func generate_quest() -> Quest:
 	quest.dialogue.push_back(TraceryService.generate_text(TraceryService.INTRO_PATH, false, quest_data))
 
 	quest.dialogue.push_back(TraceryService.generate_text(TraceryService.Q1_PATH, true, quest_data))
-	quest.dialogue.push_back(TraceryService.generate_text(TraceryService.Q2_PATH, true, quest_data))
 
 	for data in quest_data:
 		quest.objectifs[data] = quest_data[data]

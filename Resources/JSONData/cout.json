@@ -1,8 +1,8 @@
 {
-	"origin":["Euh, #recuperer# ce couteau, pose pas de question, #utilite# !","#alors#, je pose ça là, mais un couteau, #utilitebis#, donc, #recuperer# en un et #travail#"],
+	"origin":["Euh, #recuperer# ce couteau, pose pas de question, #utilite# !","#alors#, je pose ça là, mais un couteau, #utilité_bis#, donc, #recuperer# en un et #travail#"],
 	"recuperer":["récupère","prend","attrape"],
 	"utilite":["ça te sera utile","t'en auras besoin","c'est un ordre","et bonne chance"],
 	"alors":["Alors","Juste comme ça","J'y pense"],
-	"utilitebis" : ["ça peut être utile","tu vas en avoir besoin","c'est important"],
+	"utilité_bis" : ["ça peut être utile","tu vas en avoir besoin","c'est important"],
 	"travail" : ["au travail","en route","en avant","bonne chance","à plus tard j'espère"]
 }
