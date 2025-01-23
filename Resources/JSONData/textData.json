@@ -1,0 +1,88 @@
+{
+	"INTRO":
+	{
+		"origin":["#salutations# ? #exasperation#"],
+		"salutations":["#politesse#, c'est toi #qualificatif#"],
+		"exasperation":["Tu as #superlatif# #temps# de retard."],
+		"politesse":["Salut","Eh oh","Bong sang","Bonjour","Ah enfin","Ah bah"],
+		"qualificatif":["le nouveau", "le gringalet","le stagiaire","le bambin","l'apprenti","le novice","le débutant","l'assistant","le chérubin","le commis"],
+		"superlatif":["presque","plus de"],
+		"temps":["une heure","un quart d'heure","une demi heure","1 jour","1 semaine"]
+	},
+	"Q1":
+	{
+		"origin":["[MAINLEGUME:#légumes#] [SIDELEGUME:#légumes#] [NBMAINLEGUME:#chiffresMAINLEGUME#][NBSECONDARYLEGUME:#chiffresSIDELEGUME#]#demande# #NBMAINLEGUME# #MAINLEGUME# et #NBSECONDARYLEGUME# #SIDELEGUME# pour #recettes# aux #MAINLEGUME#, et #aggressif# !"],
+		"demande":["J'ai besoin de","Il me faut","Va me #chercher#"],
+		"chercher":["trouver","prendre","ramener","dégotter","rapporter","choper","rapporter"],
+		"légumes":["courgettes","carottes","potimarrons","choux-fleurs","poireaux","oignons","artichauds","piments","betteraves"],
+		"recettes":["ma soupe","mon potage","ma recette","ma bouillie","mon ramen","mon bouillon"],
+		"chiffresMAINLEGUME":["3","4","5"],
+		"chiffresSIDELEGUME":["2","3"],
+		"aggressif":["plus vite que ça","que ça saute","au boulot","ne traine pas","sans rêvasser","sans trainer","dépêche toi"]
+	},
+	"Q2": 
+	{
+		"origin":["[lieu:#lieux#]#désinfecte.capitalize# #lieu#, des #rats# qui s'y #trouve# !","[lieu:#lieuxMasc#] #lieu.capitalize# est #infesté# de #rats#, #occupation# t'en #immédiat# !","[lieu:#lieux#]Va dans #lieu# et #extermine# les #rats# #encore# #cachés# là bas !" ],
+		"lieuxMasc":["le garde manger","le potager","le cellier","le fourneau","mon bureau"],
+		"lieux":["la chambre froide","le garde manger","le potager intérieur","la salle des épices","la cuisine principale","le cellier","le fourneau","la laverie","mon bureau"],
+		"désinfecte":["nettoie","désinfecte","purge","vide","purifie"],
+		"rats":["bestioles","rongeurs","nuisibles","vermines","monstres","rats"],
+		"trouve":["planquent","cachent","logent","nichent","réfugient","terrent","trouvent"],
+		"infesté":["infesté","ravagé","saccagé","envahie"],
+		"occupation":["occupe","charges"],
+		"immédiat":["tout de suite","maintenant","impérativement","sans plus attendre","au plus vite","vite","expressément","de suite"],
+		"extermine":["extermine","décime","massacre","liquide","termine"],
+		"encore":["encore","toujours"],
+		"cachés":["planqués","réfugiés","cachés","terrés","enfouis","dissimulés"]
+	},
+
+	"intro + q1 + q2": 
+	{
+		"origin":["#intro#|#quest1#|#quest2#"],
+		"intro":["#salutations# ? #exasperation#"],
+		"quest1":["[MAINLEGUME:#légumes#] [SIDELEGUME:#légumes#] [NBMAINLEGUME:#chiffresMAINLEGUME#][NBSECONDARYLEGUME:#chiffresSIDELEGUME#]#demande# #NBMAINLEGUME# #MAINLEGUME# et #NBSECONDARYLEGUME# #SIDELEGUME# pour #recettes# aux #MAINLEGUME#, et #aggressif# !"],
+		"demande":["J'ai besoin de","Il me faut","Va me #chercher#"],
+		"chercher":["trouver","prendre","ramener","dégotter","rapporter","choper","rapporter"],
+		"légumes":["courgettes","carottes","potimarrons","choux-fleurs","poireaux","oignons","artichauds","piments","betteraves"],
+		"recettes":["ma soupe","mon potage","ma recette","ma bouillie","mon ramen","mon bouillon"],
+		"chiffresMAINLEGUME":["3","4","5"],
+		"chiffresSIDELEGUME":["2","3"],
+		"aggressif":["plus vite que ça","que ça saute","au boulot","ne traine pas","sans rêvasser","sans trainer","dépêche toi"],
+		"salutations":["#politesse#, c'est toi #qualificatif#"],
+		"exasperation":["Tu as #superlatif# #temps# de retard."],
+		"politesse":["Salut","Eh oh","Bong sang","Bonjour","Ah enfin","Ah bah"],
+		"qualificatif":["le nouveau", "le gringalet","le stagiaire","le bambin","l'apprenti","le novice","le débutant","l'assisstant","le chérubin","le commis"],
+		"superlatif":["presque","plus de"],
+		"temps":["une heure","un quart d'heure","une demi heure","1 jour","1 semaine"],
+		"quest2":["[lieu:#lieux#]#désinfecte.capitalize# #lieu#, des #rats# qui s'y #trouve# !","[lieu:#lieuxMasc#] #lieu.capitalize# est #infesté# de #rats#, #occupation# t'en #immédiat# !","[lieu:#lieux#]Va dans #lieu# et #extermine# les #rats# #encore# #cachés# là bas !" ],
+		"lieuxMasc":["le garde manger","le potager","le cellier","le fourneau","mon bureau"],
+		"lieux":["la chambre froide","le garde manger","le potager intérieur","la salle des épices","la cuisine principale","le cellier","le fourneau","la laverie","mon bureau"],
+		"désinfecte":["nettoie","désinfecte","purge","vide","purifie"],
+		"rats":["bestioles","rongeurs","nuisibles","vermines","monstres","rats"],
+		"trouve":["planquent","cachent","logent","nichent","réfugient","terrent","trouvent"],
+		"infesté":["infesté","ravagé","saccagé","envahie"],
+		"occupation":["occupe","charges"],
+		"immédiat":["tout de suite","maintenant","impérativement","sans plus attendre","au plus vite","vite","expressément","de suite"],
+		"extermine":["extermine","décime","massacre","liquide","termine"],
+		"encore":["encore","toujours"],
+		"cachés":["planqués","réfugiés","cachés","terrés","enfouis","dissimulés"]
+	},
+
+	"VALID" :
+	{
+		"origin":["#wellDone.capitalize# #qualificatif#","Tu as été #efficacité# #qualificatif#, #wellDone#."],
+		"wellDone" : ["bon boulot","bon travail","bien joué","excellent","bon taff","pas mauvais","bon début","masterclass"],
+		"qualificatif":["le nouveau", "le gringalet","le stagiaire","le bambin","l'apprenti","le novice","le débutant","l'assisstant","le chérubin","le commis"],
+		"efficacité":["performant","efficient","proactif","efficace"]
+	},
+
+	"COUT": 
+	{
+		"origin":["Euh, #récupérer# ce couteau, pose pas de question, #utilité# !","#alors#, je pose ça là, mais un couteau, #utilité bis#, donc, #récupérer# en un et #travail#"],
+		"récupérer":["récupère","prend","attrape"],
+		"utilité":["ça te sera utile","t'en auras besoin","c'est un ordre","et bonne chance"],
+		"alors":["Alors","Juste comme ça","J'y pense"],
+		"utilité bis" : ["ça peut être utile","tu vas en avoir besoin","c'est important"],
+		"travail" : ["au travail","en route","en avant","bonne chance","à plus tard j'espère"]
+	}
+}
