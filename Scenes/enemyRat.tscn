@@ -131,5 +131,5 @@ vframes = 4
 
 [node name="Ratv2" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
-scale = Vector2(0.025, 0.025)
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_54j80")
