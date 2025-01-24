@@ -148,7 +148,8 @@ func spawn_enemy() -> void:
 
 	for spawnpoint in spawnpoints:
 		var enemy_instantiate = packedEnemy.instantiate()
-		enemy_instantiate.position = spawnpoint.position
+		var room_bounds = get_world_bounds()
+		enemy_instantiate.position = Vector2(room_bounds.position.x + spawnpoint.position.x, room_bounds.position.y - spawnpoint.position.y)
 		room_generator.enemy_node.add_child(enemy_instantiate)
 	
 # Verifie si la salle entre en collision avec un autre Rect2 de salle
@@ -249,6 +250,8 @@ func get_door(orientation: Utils.ORIENTATION, from: Vector2) -> Door:
 	var door_position: Vector2i = Vector2i(position) + get_position_offset(from)
 	for door in doors:
 		var offsetPos = Vector2i(position) + get_position_offset(door.position)
+		print(door.orientation, " ; ", orientation)
+		print(door_position == offsetPos, " ; ", door.orientation == orientation)
 		if door_position == offsetPos && door.orientation == orientation:
 			return door
 	return null
@@ -259,13 +262,9 @@ func get_position_offset(world_point: Vector2) -> Vector2i:
 		return Vector2i.ZERO
 
 	var offset: Vector2i = Vector2i.ZERO
-	var bounds: Rect2 = get_world_bounds()
-	var local_point: Vector2 = world_point - bounds.position
 
-	if room_size.x > 1:
-		offset.x = clampi(int(local_point.x / (bounds.size.x / room_size.x)), 0, room_size.x - 1)
 	if room_size.y > 1:
-		offset.y = clampi(int(local_point.y / (bounds.size.y / room_size.y)), 0, room_size.y - 1)
+		offset.y = room_size.y - 1
 	return offset
 
 func get_center_from_room() -> Vector2:

@@ -85,6 +85,7 @@ func get_opposite_roomlist_size_from_orientation(orientation : Utils.ORIENTATION
 
 # Ajoute les ennemies de la quete dans une liste de spawn prioritaire
 func add_enemy_to_priority_list(enemy : String, nbToSpawn : int) -> void:
+	print("Enemy : ", enemy)
 	var packedEnemy = get_enemy_from_string(enemy)
 	if packedEnemy != null:
 		enemys.remove_at(packedEnemy) 
@@ -94,7 +95,6 @@ func add_enemy_to_priority_list(enemy : String, nbToSpawn : int) -> void:
 
 # Convertir le resultât du JSON en PackedScene pour faire spawner l'ennemie
 func get_enemy_from_string(enemy : String) -> PackedScene:
-	print("Enemy : ", enemy)
 	for packedEnemy in enemys:
 		var scene_path = packedEnemy.resource_path
 		var enemy_name = scene_path.get_file()
