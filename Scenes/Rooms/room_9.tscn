@@ -22,12 +22,3 @@ tile_set = ExtResource("2_hbsw3")
 [node name="Props3" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAP3/BgACABgAAAAHAPr/BgABABgAAAADAPr/BgAAABcAAAADAP3/BgABABkAAAACAPb/CgAMABUAAAACAPf/CgAMABYAAAADAPb/CgANABUAAAADAPf/CgANABYAAAAHAPb/CgAKABUAAAAHAPf/CgAKABYAAAAIAPb/CgALABUAAAAIAPf/CgALABYAAAAFAPb/CgAFABUAAAAFAPf/CgAFABYAAAA=")
 tile_set = ExtResource("2_hbsw3")
-
-[connection signal="body_entered" from="Props2/Spikes" to="Props2/Spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78499" to="Props2/@Area2D@78499" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78500" to="Props2/@Area2D@78500" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78501" to="Props2/@Area2D@78501" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78502" to="Props2/@Area2D@78502" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78503" to="Props2/@Area2D@78503" method="_on_body_entered"]
-[connection signal="body_entered" from="Props2/@Area2D@78504" to="Props2/@Area2D@78504" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/KeyCollectible" to="Props/KeyCollectible" method="_on_body_entered"]

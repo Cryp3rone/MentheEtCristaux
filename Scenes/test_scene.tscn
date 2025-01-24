@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://hud4gw4in4fe"]
 
-[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/room_1.tscn" id="1_h64id"]
+[ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://Scenes/Rooms/Chambre_Froide.tscn" id="1_h64id"]
 [ext_resource type="PackedScene" uid="uid://buuwp4chbvml5" path="res://Scenes/Rooms/room_2.tscn" id="2_o3p3c"]
 [ext_resource type="PackedScene" uid="uid://d2bd4nrdruls4" path="res://Scenes/Rooms/room_4.tscn" id="4_qrckt"]
 [ext_resource type="PackedScene" uid="uid://s6ah3dc0wqxd" path="res://Scenes/Rooms/room_3.tscn" id="5_7bqtx"]
@@ -14,11 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bu3mpyvc3fv1e" path="res://Scenes/Rooms/room_8.tscn" id="10_nai6n"]
 [ext_resource type="PackedScene" uid="uid://dbvu4ll33u4od" path="res://Scenes/Rooms/room_9.tscn" id="11_iufbm"]
 [ext_resource type="PackedScene" uid="uid://sfme73xkhjhj" path="res://Scenes/Rooms/room_10.tscn" id="12_ue26i"]
-[ext_resource type="PackedScene" path="res://Scenes/enemyBeet.tscn" id="13_er3si"]
-[ext_resource type="PackedScene" path="res://Scenes/enemyCarrot.tscn" id="14_0krty"]
+[ext_resource type="PackedScene" uid="uid://0i7hjdhspu52" path="res://Scenes/enemyBeet.tscn" id="13_er3si"]
+[ext_resource type="PackedScene" uid="uid://duonf726lgihb" path="res://Scenes/enemyCarrot.tscn" id="14_0krty"]
 [ext_resource type="PackedScene" uid="uid://134kus1mu2n2" path="res://Scenes/enemyRat.tscn" id="15_jj2ej"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemyTomato.tscn" id="16_sj5ek"]
-[ext_resource type="PackedScene" path="res://Scenes/enemyZucchini.tscn" id="17_a420v"]
+[ext_resource type="PackedScene" uid="uid://01yef0ya2jda" path="res://Scenes/enemyZucchini.tscn" id="17_a420v"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -28,6 +28,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(175, -145)
+zoom = Vector2(2, 2)
 script = ExtResource("5_43onh")
 
 [node name="RoomManager" type="Node2D" parent="." node_paths=PackedStringArray("room_node", "enemy_node")]

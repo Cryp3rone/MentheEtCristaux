@@ -18,13 +18,3 @@ tile_set = ExtResource("1_mlda8")
 [node name="Props sur table" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAPn/BgAMACQAAAAHAPv/BgAMACMAAAAHAPr/BgAMACMAAAAHAPb/CwACAC4AAAAHAPf/CwACAC8AAAAHAPj/CwACADAAAAADAPv/CwADAC4AAAADAPz/CwADAC8AAAADAP3/CwADADAAAAADAP7/CwABAC4AAAADAP//CwABAC4AAAADAPr/CwADADAAAAA=")
 tile_set = ExtResource("1_mlda8")
-
-[connection signal="body_entered" from="Props/@Area2D@42839" to="Props/@Area2D@42839" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42840" to="Props/@Area2D@42840" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42841" to="Props/@Area2D@42841" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42842" to="Props/@Area2D@42842" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42843" to="Props/@Area2D@42843" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42844" to="Props/@Area2D@42844" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42845" to="Props/@Area2D@42845" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42846" to="Props/@Area2D@42846" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@42847" to="Props/@Area2D@42847" method="_on_body_entered"]

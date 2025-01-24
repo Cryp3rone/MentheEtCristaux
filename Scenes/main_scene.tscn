@@ -44,7 +44,7 @@ room_pos = Vector2i(2, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(175, -145)
-zoom = Vector2(2.25, 2.25)
+zoom = Vector2(200, 200)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]

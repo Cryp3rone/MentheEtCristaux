@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://sxvtcnb2vnsw" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/9_Fishing_32x32.png" id="13_mx2u0"]
 [ext_resource type="Texture2D" uid="uid://4xq47jmrp2nc" path="res://FullTilesImport/1_Interiors/32x32/Theme_Sorter_32x32/20_Japanese_interiors_32x32.png" id="15_t1gmd"]
 [ext_resource type="PackedScene" uid="uid://b63bafxhu0mni" path="res://Scenes/spawn-point.tscn" id="17_k6yp2"]
-[ext_resource type="PackedScene" path="res://Scenes/npc.tscn" id="18_jxf5h"]
+[ext_resource type="PackedScene" uid="uid://dt55v5rpj5vk1" path="res://Scenes/npc.tscn" id="18_jxf5h"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
